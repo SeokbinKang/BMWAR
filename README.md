@@ -13,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Unity 2019.2.8f1 or later + Android SDK v26 or later
 * [ARCore SDK for Unity/Android](https://developers.google.com/ar/develop/unity/quickstart-android)
 * Visual Studio 2017 or later
-* An Android device that support Android v26 or later and ARCore.
+* An Android device that support Android v26 or later and ARCore.Best display resolution: 2560 x 1600.
 
 ### Installing
 
@@ -42,6 +42,8 @@ OR
 * [ARCore](https://developers.google.com/ar) - AR Support
 * [3DContainerPacking](https://github.com/davidmchapman/3DContainerPacking) - Automatic Packing Algorithm
 
+## Tested With
+* Galaxy Tab S5e (Android v26)
 
 ## Authors
 
