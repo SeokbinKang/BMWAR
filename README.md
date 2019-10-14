@@ -22,6 +22,10 @@ These instructions will get you a copy of the project up and running on your loc
 * Open the scene at Assets/Scenes/BMW_ARProject.unity
 * File > Build Setting > Build and Run
 
+OR 
+
+* Install export\bmwar.apk directly to the device
+
 ## Usase
 
 ### User Interface Overview
