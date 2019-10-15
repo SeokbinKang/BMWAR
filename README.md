@@ -30,8 +30,11 @@ OR
 
 ### User Interface Overview
 
+![UI Overview](https://github.com/SeokbinKang/BMWAR/blob/master/Screenshots/UIOverview2.png)
+
 ### Select a car model
 User can select a model by tapping it on the screen.
+![Select a car](https://github.com/SeokbinKang/BMWAR/blob/master/Screenshots/UICarSelection.png)
 
 ### Place a trunk on the surface
 User can place a virtual trunk by tapping a point on the surface. The detected surface is visualized with white polygons
