@@ -38,12 +38,15 @@ User can select a model by tapping it on the screen.
 
 ### Place a trunk on the surface
 User can place a virtual trunk by tapping a point on the surface. The detected surface is visualized with white polygons
+![Place a trunk](https://github.com/SeokbinKang/BMWAR/blob/master/Screenshots/UIARTrunk.png)
 
 ### Measure physical items
 User can measure an item by tapping its four bottom corners. The current implementation does not support estimating the height. The height is fixed as 0.3 meter. Once measured, each item is augmented with a 3D bounding box (red cube)
+![Measure an item](https://github.com/SeokbinKang/BMWAR/blob/master/Screenshots/UIMeasure1Annotated2.png)
 
 ### Auto Fit
-User can test whether the items fit into the trunk by tapping "Auto Fit" button. The trunk (blue cube) is filled with individual items (red cbues)
+User can test whether the items fit into the trunk by tapping "Auto Fit" button. The trunk (blue cube) is filled with individual items (red cubes)
+![Auto Fit](https://github.com/SeokbinKang/BMWAR/blob/master/Screenshots/UIAutoFit.png)
 
 ## Built With
 
