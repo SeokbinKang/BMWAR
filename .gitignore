@@ -1,6 +1,6 @@
 # This .gitignore file should be placed at the root of your Unity project #directory
 #
-# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+# Get latest from #https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 
 /[Tt]emp/
@@ -12,7 +12,7 @@
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
-!/export/
+!/export/*.*
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
 
@@ -38,7 +38,7 @@
 sysinfo.txt
 
 # Builds
-*.apk
+#*.apk
 *.unitypackage
 
 # Crashlytics generated file
