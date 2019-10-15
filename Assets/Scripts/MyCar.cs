@@ -21,10 +21,10 @@ public class MyCar : MonoBehaviour
 
     // the size of the trunk 
     public Vector3 TrunkSize;
-
+    public int TrunkFreeSpace;
     // UI instance to select a car model
     public GameObject UICarSelect;
-
+    public GameObject UITrunkLabel;
     // 3D GameObject for the projected trunk model
     public GameObject TrunkGameObject;
 
@@ -38,6 +38,7 @@ public class MyCar : MonoBehaviour
         carName.GetComponent<Text>().text = "Unselected";
         TrunkSize = Vector3.zero;
         TrunkGameObject = null;
+        TrunkFreeSpace = 100;
     }
 
     // Update is called once per frame
@@ -48,7 +49,8 @@ public class MyCar : MonoBehaviour
             OnClick();
             return;
         }
-        //update item UIs
+        //update the trunk freespace
+        UITrunkLabel.GetComponentInChildren<Text>().text = "Trunk\n" + TrunkFreeSpace + "% free";
     }
 
     /// <summary>
@@ -132,6 +134,10 @@ public class MyCar : MonoBehaviour
     public void AddItem(GameObject go, Vector3 dimension)
     {
         ItemInventory.GetComponent<ItemList>().AddItem(go, dimension);
+    }
+    public void SetFreeSpace(int f)
+    {
+        this.TrunkFreeSpace = f;
     }
 
 }

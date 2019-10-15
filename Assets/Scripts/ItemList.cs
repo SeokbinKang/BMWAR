@@ -85,16 +85,23 @@ public class ItemList : MonoBehaviour
     /// </summary>
     public bool PackingItems()
     {
-        //retrieve the container
+        //retrieve the container size        
         Vector3 containerSize = m_MyCar.GetComponent<MyCar>().GetTrunkSize();
+
+        //map the item id to the GameObject on the left-UI pane
         Dictionary<int, GameObject> UIItemMap = new Dictionary<int, GameObject>();
+
+        //container for the packing algorithm
         List<Container> containers = new List<Container>();
+        //items for the packing algorithm
         List<Item> itemsToPack = new List<Item>();
+        //the packing algorithm
         List<int> algorithms = new List<int>();
         m_MyCar.GetComponent<MyCar>().ClearTrunk();
         float scale = 1000f;
         containers.Add(new Container(1, new Decimal(containerSize.x* scale), new Decimal(containerSize.y* scale), new Decimal(containerSize.z* scale)));
         
+        //convert items to the Item instances
         for(int i = 0; i < this.transform.childCount; i++)
         {
             GameObject child = this.transform.GetChild(i).gameObject;
@@ -111,7 +118,11 @@ public class ItemList : MonoBehaviour
         if (result.Count < 1) return false;
         AlgorithmPackingResult resultDetail = result[0].AlgorithmPackingResults[0];
 
-        //Debug.Log("[BMWAR] container size : " + containerSize);
+        
+        float total_volume=(float) containers[0].Volume;
+        float item_volume = 0;
+
+        //check the packing result
         foreach (Item i in resultDetail.PackedItems)
         {
             Vector3 localPosition = new Vector3((float)i.CoordX/ scale, (float)i.CoordY/ scale, (float)i.CoordZ/ scale);
@@ -127,12 +138,18 @@ public class ItemList : MonoBehaviour
                 UIItemMap[i.ID].GetComponent<RawImage>().color = PackedItemColor;
                 UIItemMap.Remove(i.ID);
             }
+            item_volume += (float) i.Volume;
         }
+        
+        //check the unpacked items and update their colors in the left UI pane.
         foreach(var key in UIItemMap.Keys)
         {
             UIItemMap[key].GetComponent<ARItem>().proxyItemBox = null;
             UIItemMap[key].GetComponent<RawImage>().color = UnPackedItemColor;
         }
+        //calculate and update the free space
+        float free_space = 100 - (item_volume * 100 / total_volume);
+        m_MyCar.GetComponent<MyCar>().SetFreeSpace((int)free_space);
         if (resultDetail.IsCompletePack) return true;
         return false;
     }

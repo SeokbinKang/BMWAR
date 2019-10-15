@@ -85,7 +85,9 @@ namespace GoogleARCore.Examples.Common
         public void Initialize(DetectedPlane plane)
         {
             m_DetectedPlane = plane;
-            m_MeshRenderer.material.SetColor("_GridColor", Color.white);
+            Color c = Color.white;
+            c.a = 0.4f;
+            m_MeshRenderer.material.SetColor("_GridColor", c);
             m_MeshRenderer.material.SetFloat("_UvRotation", Random.Range(0.0f, 360.0f));
 
             Update();
@@ -133,7 +135,7 @@ namespace GoogleARCore.Examples.Common
             }
 
             // Feather distance 0.2 meters.
-            const float featherLength = 0.2f;
+            const float featherLength = 0.4f;
 
             // Feather scale over the distance between plane center and vertices.
             const float featherScale = 0.2f;

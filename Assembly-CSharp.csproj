@@ -270,6 +270,7 @@
     <Compile Include="Assets\Scripts\Assets2D.cs" />
     <Compile Include="Assets\Scripts\ItemList.cs" />
     <Compile Include="Assets\Scripts\MyCar.cs" />
+    <Compile Include="Assets\Scripts\SystemLog.cs" />
     <Compile Include="Assets\Scripts\Trunk3D.cs" />
     <Compile Include="Assets\Scripts\UserPrompt.cs" />
     <None Include="Assets\GoogleARCore\Examples\Common\Materials\Shaders\PlaneGrid.shader" />

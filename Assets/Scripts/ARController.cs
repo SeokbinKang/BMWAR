@@ -182,15 +182,18 @@ public class ARController : MonoBehaviour
                     for (int i = 0; i < 4; i++)
                     {
                         object_points[i * 2 + 0] = m_ObjectCorners[i];
-                        center += m_ObjectCorners[i];
+                        
 
                         // The system assumes the height of all objects as 0.3m. 
                         // TODO: estimation of heights or user control to modify the height
-                        object_points[i * 2 + 1] = m_ObjectCorners[i] + m_PlaneUp.normalized * 0.3f; //Fixed Height       
+                        object_points[i * 2 + 1] = m_ObjectCorners[i] + m_PlaneUp.normalized * 0.3f; //Fixed Height   
+
+                        center += object_points[i * 2 + 0];
+                        center += object_points[i * 2 + 1];
                     }
 
                     //the center of the 3D bounding box of an object.
-                    center /= 4f;                    
+                    center /= 8f;                    
 
                     //estimate the 3D bounding box
                     Bounds bounds = GeometryUtility.CalculateBounds(object_points, transform.localToWorldMatrix);
